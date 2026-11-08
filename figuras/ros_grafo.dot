@@ -1,0 +1,18 @@
+digraph G {
+  graph [rankdir=LR, fontname="Liberation Serif", nodesep=0.35, ranksep=0.55, dpi=300, pad=0.15];
+  node  [fontname="Liberation Serif", fontsize=12, color="#333333"];
+  edge  [color="#333333", arrowsize=0.7];
+  gz   [shape=box3d, label="Gazebo Fortress\n(VelocityControl e\nOdometryPublisher\nde cada VANT)"];
+  br   [shape=ellipse, label="parameter_bridge\n(ros_gz_bridge)"];
+  cmd  [shape=box, label="/model/drone_N/cmd_vel\n(geometry_msgs/Twist)"];
+  odo  [shape=box, label="/model/drone_N/odometry\n(nav_msgs/Odometry)"];
+  ev   [shape=box, label="/missao/eventos\n(std_msgs/String)"];
+  ctl  [shape=ellipse, label="multi_follower\n(controle, 10 Hz)"];
+  reg  [shape=ellipse, label="registrador"];
+  csv  [shape=note, label="Arquivos .csv"];
+  gz -> br [dir=both, label=" transporte\n do Gazebo", fontname="Liberation Serif", fontsize=10];
+  br -> odo; odo -> ctl; odo -> reg;
+  ctl -> cmd; cmd -> br;
+  ctl -> ev; ev -> reg; reg -> csv;
+  {rank=same; cmd; odo; ev}
+}

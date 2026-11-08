@@ -1,0 +1,26 @@
+digraph G {
+  graph [rankdir=TB, fontname="Liberation Serif", nodesep=0.35, ranksep=0.32, dpi=300, pad=0.15];
+  node  [shape=box, style="rounded", fontname="Liberation Serif", fontsize=12, width=5.3, margin="0.15,0.07", color="#333333"];
+  edge  [color="#333333", arrowsize=0.7];
+
+  subgraph cluster_a { label=<<B>Etapa 1 – Fundamentação</B>>; labeljust="l"; fontname="Liberation Serif"; fontsize=12; style="dashed"; color="#777777";
+    a1 [label="Revisão bibliográfica e de trabalhos relacionados"];
+  }
+  subgraph cluster_b { label=<<B>Etapa 2 – Preparação dos cenários</B>>; labeljust="l"; fontname="Liberation Serif"; fontsize=12; style="dashed"; color="#777777";
+    b1 [label="Obtenção dos cenários e das soluções do solver\n(instâncias de Santin, 2021)"];
+    b2 [label="Reconstrução dos obstáculos a partir das figuras\ne conferência com os desvios do arquivo de entrada"];
+  }
+  subgraph cluster_c { label=<<B>Etapa 3 – Planejamento</B>>; labeljust="l"; fontname="Liberation Serif"; fontsize=12; style="dashed"; color="#777777";
+    c1 [label="Pré-processamento: expansão dos obstáculos\ne cálculo dos desvios (grafo de visibilidade + Dijkstra)"];
+    c2 [label="Solver de roteamento: atribuição das linhas,\nordem de visita e recargas de cada VANT"];
+  }
+  subgraph cluster_d { label=<<B>Etapa 4 – Simulação</B>>; labeljust="l"; fontname="Liberation Serif"; fontsize=12; style="dashed"; color="#777777";
+    d1 [label="Geração das rotas, do mundo SDF e da ponte ROS 2–Gazebo"];
+    d2 [label="Verificação cinemática das rotas (sem Gazebo)"];
+    d3 [label="Execução no Gazebo: teste sem margem e\n3 repetições de cada cenário com registro da odometria"];
+  }
+  subgraph cluster_e { label=<<B>Etapa 5 – Avaliação</B>>; labeljust="l"; fontname="Liberation Serif"; fontsize=12; style="dashed"; color="#777777";
+    e1 [label="Cálculo das métricas e análise dos resultados"];
+  }
+  a1 -> b1 -> b2 -> c1 -> c2 -> d1 -> d2 -> d3 -> e1;
+}

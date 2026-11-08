@@ -1,0 +1,40 @@
+digraph G {
+  graph [rankdir=LR, fontname="Liberation Serif", nodesep=0.3, ranksep=0.45, dpi=300, pad=0.15, newrank=true];
+  node  [fontname="Liberation Serif", fontsize=15, color="#333333"];
+  edge  [color="#333333", arrowsize=0.7, fontname="Liberation Serif", fontsize=10];
+  subgraph cluster_p { label=<<B>Planejamento<BR/>(antes da missão)</B>>; labeljust="l"; style="dashed"; color="#777777"; fontname="Liberation Serif"; fontsize=15;
+    in1 [shape=note, label="Alvos, base e\nobstáculos"];
+    pre [shape=box, style=rounded, label="Pré-processamento\n(cálculo dos desvios)"];
+    f1  [shape=note, label="Arquivo de entrada\ndo solver"];
+    sol [shape=box, style=rounded, label="Solver de roteamento\n(Santin, 2021)"];
+    f2  [shape=note, label="Rotas (path_N.txt)\ne solução (sol_1.txt)"];
+    {rank=same; in1; pre; f1; sol; f2}
+    f2 -> sol -> f1 -> pre -> in1 [dir=back];
+  }
+  subgraph cluster_s { label=<<B>Simulação</B>>; labeljust="l"; style="dashed"; color="#777777"; fontname="Liberation Serif"; fontsize=15;
+    obs [shape=note, label="Obstáculos\nreconstruídos (.json)"];
+    gen [shape=box, style=rounded, label="Gerador de rotas\ne do mundo"];
+    w   [shape=note, label="world.sdf"];
+    b   [shape=note, label="bridge.sh"];
+    r   [shape=note, label="routes.json"];
+    gz  [shape=box, style=rounded, label="Gazebo Fortress"];
+    br  [shape=box, style=rounded, label="Ponte ros_gz_bridge\n(odometria e comandos)"];
+    ctl [shape=box, style=rounded, label="Nó de controle\n(multi_follower)"];
+    reg [shape=box, style=rounded, label="Nó registrador"];
+    csv [shape=note, label="Registros (.csv)"];
+    an  [shape=box, style=rounded, label="Análise e figuras"];
+    {rank=same; obs; gen}
+    obs -> gen;
+    gen -> w; gen -> b; gen -> r;
+    {rank=same; w; b; r}
+    w -> b -> r [style=invis];
+    w -> gz; b -> br; r -> ctl;
+    {rank=same; gz; br; ctl}
+    gz -> br [dir=both];
+    br -> ctl [dir=both];
+    r -> reg [constraint=false];
+    br -> reg;
+    reg -> csv -> an;
+  }
+  f2 -> gen;
+}

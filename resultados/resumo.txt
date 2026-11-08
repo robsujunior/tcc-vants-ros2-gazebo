@@ -1,0 +1,13 @@
+execução        VANTs concl.  makespan sim  equiv. real  solver   RTF    dist. mín. VANTs  cruzam.  folga mín.  contatos
+c1_margem0         6     0         466 s       9323 s    12993   1.00       1.26 m       4       0.50 m   24950
+c1_r1              6     6         613 s      13310 s    12993   1.00       0.64 m      10       1.61 m       0
+c1_r2              6     6         613 s      13309 s    12993   1.00       0.60 m      10       1.62 m       0
+c1_r3              6     6         613 s      13309 s    12993   1.00       0.61 m       9       1.60 m       0
+c2_r1              3     3        1036 s      12589 s    12505   1.00       0.60 m       7       1.64 m       0
+c2_r2              3     3        1036 s      12588 s    12505   1.00       0.60 m       7       1.64 m       0
+c2_r3              3     3        1036 s      12589 s    12505   1.00       0.60 m       7       1.72 m       0
+c3_r1              9     9        1011 s      12580 s    12538   0.99       0.60 m      45       1.64 m       0
+c3_r2              9     9        1010 s      12580 s    12538   0.99       0.60 m      45       1.60 m       0
+c3_r3              9     9        1010 s      12579 s    12538   0.99       0.60 m      45       1.63 m       0
+
+Arquivos gravados em resultados/metricas_por_vant.csv e resultados/metricas_por_execucao.csv

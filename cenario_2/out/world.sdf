@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="drone_world">
+    <plugin filename="libignition-gazebo-physics-system.so" name="ignition::gazebo::systems::Physics"></plugin>
+    <plugin filename="libignition-gazebo-scene-broadcaster-system.so" name="ignition::gazebo::systems::SceneBroadcaster"></plugin>
+    <plugin filename="libignition-gazebo-user-commands-system.so" name="ignition::gazebo::systems::UserCommands"></plugin>
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>45.0 100.0 200 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name="ground_plane">
+      <static>true</static>
+      <pose>45.00 100.00 0 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><plane><normal>0 0 1</normal><size>170.0 300.0</size></plane></geometry></collision>
+        <visual name="visual"><geometry><plane><normal>0 0 1</normal><size>170.0 300.0</size></plane></geometry>
+          <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material></visual>
+      </link>
+    </model>
+<model name="grid"><static>true</static><link name="link"><visual name="gx0"><pose>-40.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx1"><pose>-30.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx2"><pose>-20.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx3"><pose>-10.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx4"><pose>0.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx5"><pose>10.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx6"><pose>20.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx7"><pose>30.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx8"><pose>40.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx9"><pose>50.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx10"><pose>60.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx11"><pose>70.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx12"><pose>80.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx13"><pose>90.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx14"><pose>100.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx15"><pose>110.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx16"><pose>120.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gx17"><pose>130.000 100.000 0.02 0 0 0</pose><geometry><box><size>0.2 300.000 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy0"><pose>45.000 -50.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy1"><pose>45.000 -40.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy2"><pose>45.000 -30.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy3"><pose>45.000 -20.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy4"><pose>45.000 -10.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy5"><pose>45.000 0.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy6"><pose>45.000 10.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy7"><pose>45.000 20.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy8"><pose>45.000 30.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy9"><pose>45.000 40.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy10"><pose>45.000 50.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy11"><pose>45.000 60.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy12"><pose>45.000 70.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy13"><pose>45.000 80.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy14"><pose>45.000 90.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy15"><pose>45.000 100.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy16"><pose>45.000 110.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy17"><pose>45.000 120.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy18"><pose>45.000 130.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy19"><pose>45.000 140.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy20"><pose>45.000 150.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy21"><pose>45.000 160.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy22"><pose>45.000 170.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy23"><pose>45.000 180.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy24"><pose>45.000 190.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy25"><pose>45.000 200.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy26"><pose>45.000 210.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy27"><pose>45.000 220.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy28"><pose>45.000 230.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy29"><pose>45.000 240.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual><visual name="gy30"><pose>45.000 250.000 0.02 0 0 0</pose><geometry><box><size>170.000 0.2 0.02</size></box></geometry><material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material></visual></link></model>
+
+    <model name="obstacle_1">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><polyline>
+              <point>13.2000 175.0000</point>
+              <point>28.4000 184.8000</point>
+              <point>39.0000 160.0000</point>
+              <point>37.0000 132.0000</point>
+              <point>21.6000 125.0000</point>
+              <point>13.0000 144.6000</point>
+              <height>12.0</height>
+            </polyline></geometry></collision>
+        <visual name="visual"><geometry><polyline>
+              <point>13.2000 175.0000</point>
+              <point>28.4000 184.8000</point>
+              <point>39.0000 160.0000</point>
+              <point>37.0000 132.0000</point>
+              <point>21.6000 125.0000</point>
+              <point>13.0000 144.6000</point>
+              <height>12.0</height>
+            </polyline></geometry>
+          <material><ambient>0.6 0.4 0.2 1</ambient><diffuse>0.6 0.4 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_2">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><polyline>
+              <point>49.6000 52.0000</point>
+              <point>51.0000 74.0000</point>
+              <point>71.0000 74.0000</point>
+              <point>70.2000 51.6000</point>
+              <height>12.0</height>
+            </polyline></geometry></collision>
+        <visual name="visual"><geometry><polyline>
+              <point>49.6000 52.0000</point>
+              <point>51.0000 74.0000</point>
+              <point>71.0000 74.0000</point>
+              <point>70.2000 51.6000</point>
+              <height>12.0</height>
+            </polyline></geometry>
+          <material><ambient>0.6 0.4 0.2 1</ambient><diffuse>0.6 0.4 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="obstacle_3">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><polyline>
+              <point>66.2000 177.6000</point>
+              <point>72.0000 185.6000</point>
+              <point>87.0000 181.0000</point>
+              <point>81.4000 161.0000</point>
+              <point>72.8000 153.8000</point>
+              <height>12.0</height>
+            </polyline></geometry></collision>
+        <visual name="visual"><geometry><polyline>
+              <point>66.2000 177.6000</point>
+              <point>72.0000 185.6000</point>
+              <point>87.0000 181.0000</point>
+              <point>81.4000 161.0000</point>
+              <point>72.8000 153.8000</point>
+              <height>12.0</height>
+            </polyline></geometry>
+          <material><ambient>0.6 0.4 0.2 1</ambient><diffuse>0.6 0.4 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="drone_0">
+      <pose>46.7500 -1.0000 1.5000 0 0 0</pose>
+      <link name="base_link">
+        <gravity>false</gravity>
+        <inertial><mass>1.0</mass>
+          <inertia><ixx>0.01</ixx><iyy>0.01</iyy><izz>0.01</izz></inertia></inertial>
+        <visual name="body">
+          <geometry><box><size>1.0000 1.0000 0.1200</size></box></geometry>
+          <material><ambient>0.9 0.2 0.2 1</ambient><diffuse>0.9 0.2 0.2 1</diffuse></material>
+        </visual>
+        <visual name="rotor0"><pose>0.4500 0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <visual name="rotor1"><pose>-0.4500 0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <visual name="rotor2"><pose>0.4500 -0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <visual name="rotor3"><pose>-0.4500 -0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <collision name="collision">
+          <geometry><box><size>1.0000 1.0000 0.1200</size></box></geometry>
+        </collision>
+      </link>
+      <plugin filename="libignition-gazebo-velocity-control-system.so" name="ignition::gazebo::systems::VelocityControl">
+        <topic>/model/drone_0/cmd_vel</topic>
+      </plugin>
+      <plugin filename="libignition-gazebo-odometry-publisher-system.so" name="ignition::gazebo::systems::OdometryPublisher">
+        <odom_topic>/model/drone_0/odometry</odom_topic>
+        <dimensions>3</dimensions>
+      </plugin>
+    </model>
+    <model name="drone_1">
+      <pose>46.7500 -1.0000 2.1000 0 0 0</pose>
+      <link name="base_link">
+        <gravity>false</gravity>
+        <inertial><mass>1.0</mass>
+          <inertia><ixx>0.01</ixx><iyy>0.01</iyy><izz>0.01</izz></inertia></inertial>
+        <visual name="body">
+          <geometry><box><size>1.0000 1.0000 0.1200</size></box></geometry>
+          <material><ambient>0.2 0.45 0.9 1</ambient><diffuse>0.2 0.45 0.9 1</diffuse></material>
+        </visual>
+        <visual name="rotor0"><pose>0.4500 0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <visual name="rotor1"><pose>-0.4500 0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <visual name="rotor2"><pose>0.4500 -0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <visual name="rotor3"><pose>-0.4500 -0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <collision name="collision">
+          <geometry><box><size>1.0000 1.0000 0.1200</size></box></geometry>
+        </collision>
+      </link>
+      <plugin filename="libignition-gazebo-velocity-control-system.so" name="ignition::gazebo::systems::VelocityControl">
+        <topic>/model/drone_1/cmd_vel</topic>
+      </plugin>
+      <plugin filename="libignition-gazebo-odometry-publisher-system.so" name="ignition::gazebo::systems::OdometryPublisher">
+        <odom_topic>/model/drone_1/odometry</odom_topic>
+        <dimensions>3</dimensions>
+      </plugin>
+    </model>
+    <model name="drone_2">
+      <pose>46.7500 -1.0000 2.7000 0 0 0</pose>
+      <link name="base_link">
+        <gravity>false</gravity>
+        <inertial><mass>1.0</mass>
+          <inertia><ixx>0.01</ixx><iyy>0.01</iyy><izz>0.01</izz></inertia></inertial>
+        <visual name="body">
+          <geometry><box><size>1.0000 1.0000 0.1200</size></box></geometry>
+          <material><ambient>0.15 0.7 0.3 1</ambient><diffuse>0.15 0.7 0.3 1</diffuse></material>
+        </visual>
+        <visual name="rotor0"><pose>0.4500 0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <visual name="rotor1"><pose>-0.4500 0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <visual name="rotor2"><pose>0.4500 -0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <visual name="rotor3"><pose>-0.4500 -0.4500 0 0 0 0</pose>
+          <geometry><cylinder><radius>0.1800</radius><length>0.0600</length></cylinder></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <collision name="collision">
+          <geometry><box><size>1.0000 1.0000 0.1200</size></box></geometry>
+        </collision>
+      </link>
+      <plugin filename="libignition-gazebo-velocity-control-system.so" name="ignition::gazebo::systems::VelocityControl">
+        <topic>/model/drone_2/cmd_vel</topic>
+      </plugin>
+      <plugin filename="libignition-gazebo-odometry-publisher-system.so" name="ignition::gazebo::systems::OdometryPublisher">
+        <odom_topic>/model/drone_2/odometry</odom_topic>
+        <dimensions>3</dimensions>
+      </plugin>
+    </model>
+  </world>
+</sdf>
