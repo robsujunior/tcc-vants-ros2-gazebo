@@ -3,7 +3,8 @@
 
 Usa as mesmas funções do pré-processador (PathPlanningContext.compute_all), sem a
 interface gráfica: lê os alvos do arquivo do cenário, adiciona os obstáculos
-(expandidos pela margem) e cronometra o cálculo de todos os desvios.
+(expandidos pela margem, pelo próprio pré-processador) e cronometra o cálculo de
+todos os desvios.
 
 Uso: python3 tempo_preprocessamento.py [repeticoes]
 """
@@ -26,13 +27,12 @@ for n, c in CENARIOS.items():
         margem = margem_sim / c['scale']
         tempos = []
         for _ in range(reps):
-            plane = pp.PlaneContext()
+            plane = pp.PlaneContext(safety_margin=margem)
             plane.add_depot(pp.Depot(*base))
             for k in range(0, len(targets), 2):
                 plane.add_line(pp.Target(*targets[k]), pp.Target(*targets[k + 1]))
             for v in obs.values():
-                poly = spl.Polygon(v)
-                plane.add_obstacle(poly.buffer(margem, join_style=2) if margem > 0 else poly)
+                plane.add_obstacle(spl.Polygon(v))
             ctx = pp.PathPlanningContext(plane, (0.0, 1.0))
             t0 = time.perf_counter()
             warn = ctx.compute_all()

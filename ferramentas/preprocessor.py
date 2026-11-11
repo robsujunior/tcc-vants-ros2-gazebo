@@ -195,10 +195,14 @@ class CoverageLine:
 
 
 class PlaneContext:
-    def __init__(self) -> None:
+    def __init__(self, safety_margin: float = 0.0) -> None:
+        # Margem de segurança (m): distância pela qual cada obstáculo é
+        # expandido antes do cálculo dos desvios. Zero mantém o obstáculo original.
+        self.safety_margin = safety_margin
         self.lines: List[CoverageLine] = []
         self.depots: List[Depot] = []
         self.obstacles: List[Obstacle] = []
+        self.true_obstacles: List[Obstacle] = []
 
     def add_depot(self, depot: Depot) -> None:
         self.depots.append(depot)
@@ -208,7 +212,13 @@ class PlaneContext:
 
     def add_obstacle(self, obstacle: Obstacle) -> None:
         if isinstance(obstacle, Obstacle) and obstacle.is_valid:
-            self.obstacles.append(obstacle)
+            self.true_obstacles.append(obstacle)
+            if self.safety_margin > 0:
+                # join_style=2: junção em quina (mitre), preserva os vértices
+                self.obstacles.append(
+                    obstacle.buffer(self.safety_margin, join_style=2))
+            else:
+                self.obstacles.append(obstacle)
         else:
             raise RuntimeError("Obstacles must be simple polygons.")
 
@@ -313,9 +323,9 @@ class IO:
         for (s_id, e_id), (_, dc) in sorted(paths.transition_results.items()):
             parts.append(f"{s_id} {e_id} {dc:.6f}")
 
-        if plane.obstacles:
+        if plane.true_obstacles:
             parts.append("@obstacles")
-            for obs in plane.obstacles:
+            for obs in plane.true_obstacles:
                 for x, y in obs.exterior.coords[:-1]:
                     parts.append(f"{x} {y}")
                 parts.append(";")
@@ -511,12 +521,14 @@ class Graphics:
 def main() -> None:
     if len(sys.argv) < 4:
         print(
-            "Usage: python preprocessor.py <input_file> <dx> <dy> [optional_output_file]")
+            "Usage: python preprocessor.py <input_file> <dx> <dy> "
+            "[optional_output_file] [safety_margin_m]")
         sys.exit(1)
 
     input_file = sys.argv[1]
     dx, dy = float(sys.argv[2]), float(sys.argv[3])
     output_file = sys.argv[4] if len(sys.argv) > 4 else None
+    safety_margin = float(sys.argv[5]) if len(sys.argv) > 5 else 0.0
 
     mag = (dx ** 2 + dy ** 2) ** 0.5
     if mag < 1e-12:
@@ -525,7 +537,7 @@ def main() -> None:
 
     direction: Direction = (dx / mag, dy / mag)
 
-    plane = PlaneContext()
+    plane = PlaneContext(safety_margin)
     IO.load_plane_from_file(input_file, plane)
 
     paths = PathPlanningContext(plane, direction)

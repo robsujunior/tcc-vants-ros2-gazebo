@@ -29,7 +29,7 @@ As análises, as figuras e a simulação cinemática não precisam do ROS 2 nem 
 | `analisar_resultados.py` | Métricas das execuções no Gazebo |
 | `analise_autonomia.py`, `analise_margem.py`, `analise_frequencia.py`, `tempo_preprocessamento.py` | Análises complementares do capítulo 6 |
 | `figuras.py`, `figura_margem0.py`, `tabela_consolidada.py` | Figuras e tabelas do TCC |
-| `ferramentas/preprocessor.py` | Pré-processador de desvios (ver Origem dos arquivos) |
+| `ferramentas/preprocessor.py` | Pré-processador de desvios, com a margem de segurança como parâmetro e a gravação dos polígonos originais na seção `@obstacles` da saída (ver Origem dos arquivos) |
 | `resultados/` | Odometria, eventos e métricas das execuções usadas no TCC |
 | `figuras/` | Figuras do TCC e fontes dos diagramas (`.dot`) |
 
